@@ -3,7 +3,7 @@
 
 ## Overview
 
-TODO
+This is a Product Opinion Research Assistant. The main functionality is to analyze Youtube videos to gather relevant information and opinions about products.
 
 
 ### Agent architecture:
@@ -12,48 +12,36 @@ This diagram shows the detailed architecture of the agents and tools used
 to implement this workflow.
 <img src="multi_agent_diagram.png" alt="multi agent diagram" width="800"/>
 
-## Setup and Installation
+## Setup Instructions
 
-1.  **Prerequisites**
-
-    *   Python 3.11+
-    *   uv
-        *   For dependency management and packaging. Please follow the
-            instructions on the official
-            [Poetry website](https://python-poetry.org/docs/) for installation.
-
-        ```bash
-        uv sync
-        ```
-
-    * A project on Google Cloud Platform
-    * Google Cloud CLI
-        *   For installation, please follow the instruction on the official
-            [Google Cloud website](https://cloud.google.com/sdk/docs/install).
-
-2.  **Installation**
-
+1.  **Clone the Repository:**
     ```bash
-    # Clone this repository.
-    git clone
-    cd
-    # Install the package and dependencies.
-    poetry install
+    git clone https://github.com/matheusgmaia/adk-product-opinion-research.git
+    cd adk-product-opinion-research
     ```
 
-3.  **Configuration**
+2.  **Install `uv`:** If you haven't already, install `uv` following the instructions on their website.
 
-    *   Set up Google Cloud credentials.
+3.  **Create Virtual Environment:**
+    ```bash
+    uv venv
+    ```
+    This creates a `.venv` directory. You don't typically need to activate it manually, as `uv run` handles it.
 
-        *   You may set the following environment variables in your shell, or in
-            a `.env` file instead.
+4.  **Install Dependencies:**
+    ```bash
+    uv sync
+    ```
+    This command installs all dependencies listed in `pyproject.toml` and `uv.lock` into the `.venv`.
 
+
+5.  **Configuration**
+
+    *   Copy the example environment file:
         ```bash
-        export GOOGLE_GENAI_USE_VERTEXAI=true
-        export GOOGLE_CLOUD_PROJECT=<your-project-id>
-        export GOOGLE_CLOUD_LOCATION=<your-project-location>
-        export GOOGLE_CLOUD_STORAGE_BUCKET=<your-storage-bucket>  # Only required for deployment on Agent Engine
+        cp .env.example .env
         ```
+    *   Review the `.env` file and adjust settings if necessary
 
     *   Authenticate your GCloud account.
 
@@ -86,6 +74,8 @@ blank.
 
 ## Customization
 
-The Product Opinions Research Agent can be customized to better suit your requirements. For example:
-
-TODO
+The Product Opinions Research Agent can be customized and extended to better suit your requirements. For example:
+ 1. Integrate Specialized Search Tools: Augment the agent's discovery capabilities by incorporating additional  search functionalities, such as an google search tool.
+ 2. Implement Output Visualization: Enhance the presentation of research findings by adding modules and instruction to better visualize the results.
+ 3. Develop with price search functionality.
+ 4. Reset needed state informations at each interaction.
