@@ -5,6 +5,9 @@
 
 This is a Product Opinion Research Assistant. The main functionality is to analyze Youtube videos to gather relevant information and opinions about products.
 
+Sample Results: 
+- [Nike Alphafly 3](sample/NIKE_ALPHAFLY_3_research_report.md)
+- [Nintendo Switch 2](sample/Nintendo_Switch_2_research_report.md)
 
 ### Agent architecture:
 
